@@ -1,0 +1,8 @@
+3.
+
+  a) server picks: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f) 
+  b) Client picks: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f) 
+  c) Client picks: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f) 
+  d) Server picks: TLS_RSA_WITH_3DES_EDE_CBC_SHA (0xa)
+
+
