@@ -1,0 +1,180 @@
+[1m
+###########################################################
+    testssl.sh       2.8rc3 from https://testssl.sh/dev/
+    ([1;30m623013d 2016-11-27 00:18:55 -- 1.562[m[1m)
+
+      This program is free software. Distribution and
+             modification under GPLv2 permitted.
+      USAGE w/o ANY WARRANTY. USE IT AT YOUR OWN RISK!
+
+       Please file bugs @ https://testssl.sh/bugs/
+
+###########################################################[m
+
+ Using "OpenSSL 1.0.2j  26 Sep 2016" [~125 ciphers]
+ on MacBook-Pro-2:/usr/local/bin/openssl
+ (built: "reproducible build, date unspecified", platform: "darwin64-x86_64-cc")
+
+
+[7m Start 2016-11-27 03:28:19    -->> 127.0.0.1:443 (localhost) <<--[m
+
+ further IP addresses:   ::1
+ rDNS (127.0.0.1):       hgw.
+ Service detected:       HTTP
+
+
+[1m[4m Testing protocols [m[1m[4m(via sockets except TLS 1.2, SPDY+HTTP2) [m
+
+[1m SSLv2               [m[1;32mnot offered (OK)[m
+[1m SSLv3               [m[1;32mnot offered (OK)[m
+[1m TLS 1               [mnot offered
+[1m TLS 1.1             [mnot offered
+[1m TLS 1.2             [m[1;32moffered (OK)[m
+[1m Version tolerance   [m[1;32mdowngraded to TLSv1.2 (OK)[m
+[1m SPDY/NPN            [mhttp/1.1 (advertised)
+[1m HTTP2/ALPN          [mnot offered
+
+[1m[4m Testing ~standard cipher lists [m
+
+[1m Null Ciphers                 [m[1;32mnot offered (OK)[m
+[1m Anonymous NULL Ciphers       [m[1;32mnot offered (OK)[m
+[1m Anonymous DH Ciphers         [m[1;32mnot offered (OK)[m
+[1m 40 Bit encryption            [m[0;35mLocal problem: No 40 Bit encryption  configured in /usr/local/bin/openssl[m
+[1m 56 Bit encryption            [m[0;35mLocal problem: No 56 Bit encryption  configured in /usr/local/bin/openssl[m
+[1m Export Ciphers (general)     [m[0;35mLocal problem: No Export Ciphers (general) configured in /usr/local/bin/openssl[m
+[1m Low (<=64 Bit)               [m[0;35mLocal problem: No Low (<=64 Bit) configured in /usr/local/bin/openssl[m
+[1m DES Ciphers                  [m[0;35mLocal problem: No DES Ciphers  configured in /usr/local/bin/openssl[m
+[1m "Medium" grade encryption    [m[0;32mnot offered (OK)[m
+[1m Triple DES Ciphers           [mnot offered (OK)
+[1m High grade encryption        [m[1;32moffered (OK)[m
+
+
+[1m[4m Testing robust (perfect) forward secrecy, (P)FS -- omitting Null Authentication/Encryption, 3DES, RC4 [m
+
+[0;32m PFS is offered (OK)[m          ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES256-GCM-SHA384 ECDHE-RSA-AES256-SHA384 
+[1m Elliptic curves offered:     [msecp384r1 
+
+
+[1m[4m Testing server preferences [m
+
+[1m Has server cipher order?     [m[1;32myes (OK)[m
+[1m Negotiated protocol          [m[1;32mTLSv1.2[m
+[1m Negotiated cipher            [m[1;32mECDHE-RSA-AES256-GCM-SHA384[m, [0;32m384 bit ECDH[m
+[1m Cipher order[m
+    SSLv2:     [0;35mLocal problem: /usr/local/bin/openssl doesn't support "s_client -ssl2"[m
+    TLSv1.2:   ECDHE-RSA-AES256-GCM-SHA384 ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES256-SHA384
+    http/1.1:  ECDHE-RSA-AES256-GCM-SHA384 ECDHE-RSA-AES128-GCM-SHA256 ECDHE-RSA-AES256-SHA384 
+
+
+[1m[4m Testing server defaults (Server Hello) [m
+
+[1m TLS extensions (standard)    [m"renegotiation info/#65281" "EC point formats/#11" "heartbeat/#15" "next protocol/#13172"
+[1m Session Tickets RFC 5077     [m(none)
+[1m SSL Session ID support       [myes
+[1m TLS clock skew[m               random values, no fingerprinting possible 
+[1m Signature Algorithm          [m[0;32mSHA256 with RSA[m
+[1m Server key size              [mRSA [0;32m4096[m bits
+[1m Fingerprint / Serial         [mSHA1 3B0183BA6E44A9E57AE4D2568810A8E95556015F / B3127E33D609CF23
+                              SHA256 0C74C405CAA07C6E56C58959C17CDB5A4DDD1049233FDCCF50B53A0EAC308125
+[1m Common Name (CN)             [m"www.dharness.com"
+[1m subjectAltName (SAN)         [m-- 
+[1m Issuer                       [m"My Fake CA." ("King of the Stack" from "CA")
+[1m Trust (hostname)             [m[0;33mcertificate does not match supplied URI[m
+[1m Chain of trust[m               [0;35m"./etc/*.pem" cannot be found / not readable[m
+[1m EV cert[m (experimental)       no 
+[1m Certificate Expiration       [m[0;33mexpires < 60 days (59)[m (2016-11-27 02:43 --> 2017-01-26 02:43 -0500)
+[1m # of certificates provided[m   1
+[1m Certificate Revocation List  [m[0;31m--[m
+[1m OCSP URI                     [m[0;31m--[m
+[1m OCSP stapling                [m[1;33m--[m
+
+
+[1m[4m Testing HTTP header response @ "/" [m
+
+[1m HTTP Status Code           [m  200 OK
+[1m HTTP clock skew              [m0 sec from localtime
+[1m Strict Transport Security    [m[0;32m730 days[m=63072000 s[0;32m, includeSubDomains[m[0;32m, preload[m
+[1m Public Key Pinning           [m--
+[1m Server banner                [mnginx/[33m1(B[m.[33m1(B[m[33m1(B[m.[33m5(B[m
+[1m Application banner           [m--
+[1m Cookie(s)                    [m(none issued at "/")
+[1m Security headers             [m[0;32mX-Frame-Options[m DENY
+                              [0;32mX-Content-Type-Options[m nosniff
+[1m Reverse Proxy banner         [m--
+
+
+[1m[4m Testing vulnerabilities [m
+
+[1m Heartbleed[m (CVE-2014-0160)                [1;32mnot vulnerable (OK)[m
+[1m CCS[m (CVE-2014-0224)                       [1;32mnot vulnerable (OK)[m
+[1m Secure Renegotiation [m(CVE-2009-3555)      [1;32mnot vulnerable (OK)[m
+[1m Secure Client-Initiated Renegotiation     [m[0;32mnot vulnerable (OK)[m
+[1m CRIME, TLS [m(CVE-2012-4929)                [0;32mnot vulnerable (OK)[m
+[1m BREACH[m (CVE-2013-3587)                    [1;32mno HTTP compression (OK) [m - only supplied "/" tested
+[1m POODLE, SSL[m (CVE-2014-3566)               [1;32mnot vulnerable (OK)[m
+[1m TLS_FALLBACK_SCSV[m (RFC 7507),             [0;32mNo fallback possible, TLS 1.2 is the only protocol (OK)[m
+[1m FREAK[m (CVE-2015-0204)                     [0;35mLocal problem: /usr/local/bin/openssl doesn't have any EXPORT RSA ciphers configured[m
+[1m DROWN[m (2016-0800, CVE-2016-0703)          [1;32mnot vulnerable on this port (OK)[m
+                                           make sure you don't use this certificate elsewhere with SSLv2 enabled services
+                                           https://censys.io/ipv4?q=0C74C405CAA07C6E56C58959C17CDB5A4DDD1049233FDCCF50B53A0EAC308125 could help you to find out
+[1m LOGJAM[m (CVE-2015-4000), experimental      [0;35mLocal problem: /usr/local/bin/openssl doesn't have any DHE EXPORT ciphers configured[m
+[1m BEAST[m (CVE-2011-3389)                     [0;32mno SSL3 or TLS1 (OK)[m
+[1m RC4[m (CVE-2013-2566, CVE-2015-2808)        [0;32mno RC4 ciphers detected (OK)[m
+
+
+[1m[4m Testing all 125 locally available ciphers against the server, ordered by encryption strength [m
+
+Hexcode  Cipher Suite Name (OpenSSL)       KeyExch.  Encryption Bits     Cipher Suite Name (RFC)
+---------------------------------------------------------------------------------------------------------------------------
+ xc030   ECDHE-RSA-AES256-GCM-SHA384       ECDH [0;32m384 [m  AESGCM    256      TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384              
+ xc028   ECDHE-RSA-AES256-SHA384           ECDH [0;32m384 [m  AES       256      TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384              
+ xc02f   ECDHE-RSA-AES128-GCM-SHA256       ECDH [0;32m384 [m  AESGCM    128      TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256              
+
+
+[1m[4m Running browser simulations via sockets (experimental) [m
+
+ Android 2.3.7                 No connection
+ Android 4.0.4                 No connection
+ Android 4.1.1                 No connection
+ Android 4.2.2                 No connection
+ Android 4.3                   No connection
+ Android 4.4.2                 TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Android 5.0.0                 TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256
+ Baidu Jan 2015                No connection
+ BingPreview Jan 2015          TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Chrome 47 / OSX               TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256
+ Firefox 31.3.0ESR / Win7      TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256
+ Firefox 42 OS X               TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256
+ GoogleBot Feb 2015            TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256
+ IE 6 XP                       No connection
+ IE 7 Vista                    No connection
+ IE 8 XP                       No connection
+ IE 8-10 Win 7                 No connection
+ IE 11 Win 7                   TLSv1.2 ECDHE-RSA-AES256-SHA384
+ IE 11 Win 8.1                 No connection
+ IE 10 Win Phone 8.0           No connection
+ IE 11 Win Phone 8.1           No connection
+ IE 11 Win Phone 8.1 Update    TLSv1.2 ECDHE-RSA-AES256-SHA384
+ IE 11 Win 10                  TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Edge 13 Win 10                TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Edge 13 Win Phone 10          TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Java 6u45                     No connection
+ Java 7u25                     No connection
+ Java 8u31                     TLSv1.2 ECDHE-RSA-AES128-GCM-SHA256
+ OpenSSL 0.9.8y                No connection
+ OpenSSL 1.0.1l                TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ OpenSSL 1.0.2e                TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Safari 5.1.9 OS X 10.6.8      No connection
+ Safari 6 iOS 6.0.1            TLSv1.2 ECDHE-RSA-AES256-SHA384
+ Safari 6.0.4 OS X 10.8.4      No connection
+ Safari 7 iOS 7.1              TLSv1.2 ECDHE-RSA-AES256-SHA384
+ Safari 7 OS X 10.9            TLSv1.2 ECDHE-RSA-AES256-SHA384
+ Safari 8 iOS 8.4              TLSv1.2 ECDHE-RSA-AES256-SHA384
+ Safari 8 OS X 10.10           TLSv1.2 ECDHE-RSA-AES256-SHA384
+ Safari 9 iOS 9                TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Safari 9 OS X 10.11           TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+ Apple ATS 9 iOS 9             TLSv1.2 ECDHE-RSA-AES256-GCM-SHA384
+
+[7m Done 2016-11-27 03:29:03    -->> 127.0.0.1:443 (localhost) <<--[m
+
+
